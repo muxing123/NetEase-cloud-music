@@ -1,0 +1,163 @@
+<!--index.wxml-->
+<view class="outer">
+  <view class="top">
+    <view>音乐馆</view>
+    <view class="search">
+      <van-search value="{{ value }}" placeholder="请输入搜索关键词" use-action-slot bindsearch="onSearch" shape="round" bindfocus="open" bindchange="change">
+        <view slot="action" bindtap="onSearch" wx:if="{{show === 1}}">搜索</view>
+        <view slot="action" bindtap="close" wx:else>取消</view>
+      </van-search>
+    </view>
+    <view class="box">
+      <image src="../../images/note.png" class="note"></image>
+    </view>
+  </view>
+  <!-- <view class="searchComponents"><search bindonSearch="onSearch" bindclose="close" offset="{{offset}}" id="search"></search></view> -->
+  <view class="slide" wx:if="{{show === 1}}">
+    <scroll-view scroll-y="true" class="scrollset">
+      <wheel banners="{{banners}}"></wheel>
+      <view class="nav">
+        <view class="item">
+          <view class="round">
+            <image src="../../images/recommend.png" class="img"></image>
+          </view>
+          <view class="text">每日推荐</view>
+        </view>
+        <view class="item">
+          <view class="round">
+            <image src="../../images/sheet.png" class="img"></image>
+          </view>
+          <view class="text">歌单</view>
+        </view>
+        <view class="item">
+          <view class="round">
+            <image src="../../images/rank.png" class="img"></image>
+          </view>
+          <view class="text">排行榜</view>
+        </view>
+        <view class="item">
+          <view class="round">
+            <image src="../../images/radio.png" class="img"></image>
+          </view>
+          <view class="text">电台</view>
+        </view>
+        <view class="item">
+          <view class="round">
+            <image src="../../images/live.png" class="img"></image>
+          </view>
+          <view class="text">直播</view>
+        </view>
+      </view>
+      <recommend result="{{result}}"></recommend>
+      <dish></dish>
+      <power></power>
+      <radio></radio>
+      <program></program>
+    </scroll-view>
+  </view>
+  <view wx:if="{{show === 2}}">
+    <view class="hotList">
+      <scroll-view scroll-y="true" class="scrollset">
+        <view class="history" wx:if="{{history.length > 0}}">
+          <view class="top">
+            <view class="head">历史记录</view>
+            <van-icon name="delete" bindtap="del" />
+          </view>
+          <view class="flex">
+            <view class="term" wx:for="{{history}}" wx:key="{{index}}" bindtap="onSearch" data-word="{{item}}">{{item}}</view>
+          </view>
+        </view>
+        <view class="title">热搜榜</view>
+        <view wx:for="{{hotList}}" wx:key="{{index}}" class="item" bindtap="onSearch" data-word="{{item.searchWord}}">
+          <view class="left {{index<=2?'red':''}}">{{index+1}}</view>
+          <view class="right">
+            <view class="rightTop">
+              <view class="searchWord {{index<=2?'bold':''}}">
+                {{item.searchWord}}
+                <text class="hot" wx:if="{{item.iconType === 1}}">HOT</text>
+              </view>
+              <view class="score">{{item.score}}</view>
+            </view>
+            <view class="rightBottom">{{item.content}}</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="searcSuggest" wx:if="{{value && show!==3}}">
+    <view class="value" bindtap="onSearch" data-word="{{value}}">
+      搜索"{{value}}"</view>
+    <view wx:for="{{albums}}" wx:key="{{index}}" class="item" bindtap="onAlbums" data-artist="{{item.artist.name}}" data-name="{{item.name}}">
+      <van-icon name="search" />
+      <text class="text">{{item.artist.name}}{{item.name}}</text>
+    </view>
+    <view wx:for="{{artists}}" wx:key="{{index}}" class="item" bindtap="onSearch" data-word="{{item.name}}">
+      <van-icon name="search" />
+      <text class="text">{{item.name}}</text>
+    </view>
+    <view wx:for="{{mvs}}" wx:key="{{index}}" class="item" bindtap="onAlbums" data-artist="{{item.artistName}}" data-name="{{item.name}}">
+      <van-icon name="search" />
+      <text class="text">{{item.artistName}}{{item.name}}</text>
+    </view>
+  </view>
+  <view class="searchResult" wx:if="{{show === 3}}">
+    <van-tabs active="{{ active }}" bind:click="setCat">
+      <!-- <van-tab wx:for="{{searchType}}" wx:key="{{index}}" title="{{item.type}}" name="{{item.cat}}"> -->
+      <van-tab title="综合" name="{{1018}}">综合</van-tab>
+      <van-tab title="单曲" name="{{1}}">
+        <view class="playList">
+          <scroll-view scroll-y="true" class="scrollset">
+            <view class="playAll" bindtap="setOrder" data-id="{{songs[0].id}}">
+              <view class="left">
+                <view>
+                  <image src="../../images/play.png" class="img"></image>
+                </view>
+                <view class="text">播放全部</view>
+              </view>
+              <view class="right">
+                <image src="../../images/menutwo.png" class="menu"></image>多选</view>
+            </view>
+            <view wx:for="{{songs}}" wx:key="{{index}}" class="item" bindtap="goPlay" data-index="{{index}}" data-id="{{item.id}}" data-item="{{item}}">
+              <view class="left">
+                <view class="name">
+                  <view class="songName">
+                    <text wx:for="{{item.name}}" wx:key="{{index}}" class="{{item === value ? 'blue' : ''}}">{{item}}</text>
+                  </view>
+                  <view class="link">
+                    <text wx:for="{{item.artists[0].name}}" wx:key="{{index}}" class="{{item === value ? 'blue' : ''}}">{{item}}</text>-
+                    <text wx:for="{{item.album.name}}" wx:key="{{index}}" class="{{item === value ? 'blue' : ''}}">{{item}}</text>
+                  </view>
+                </view>
+              </view>
+              <view class="right">
+                <image wx:if="{{item.mvid}}" class="img" src="../../images/playtwo.png"></image>
+                <image class="img" src="../../images/menu.png"></image>
+              </view>
+            </view>
+            <view class="btOpen" wx:if="{{btOpen}}">
+              <btplay track="{{track}}" open="{{open}}" src="{{src}}"></btplay>
+            </view>
+          </scroll-view>
+        </view>
+      </van-tab>
+      <van-tab title="视频" name="{{1014}}">
+        <videos value="{{value}}"></videos>  
+      </van-tab>
+      <van-tab title="歌手" name="{{100}}">        
+        <singerunti value="{{value}}"></singerunti>        
+      </van-tab>
+      <van-tab title="专辑" name="{{10}}">
+        <albumlist value="{{value}}"></albumlist>
+      </van-tab>
+      <van-tab title="歌单" name="{{1000}}">
+        <sheetlist value="{{value}}"></sheetlist>
+      </van-tab>
+      <van-tab title="电台" name="{{1009}}">
+        <radiolist value="{{value}}"></radiolist>
+      </van-tab>
+      <van-tab title="用户" name="{{1002}}">
+        <user value="{{value}}"></user>
+      </van-tab>
+    </van-tabs>
+  </view>
+</view>

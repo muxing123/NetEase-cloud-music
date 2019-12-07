@@ -1,0 +1,37 @@
+/* components/albumlist/albumlist.wxss */
+.albumlist .scrollset {
+  height: 900rpx;
+}
+.albumlist .scrollset .item {
+  display: flex;
+  padding: 10rpx;
+}
+.albumlist .scrollset .item .left .pic {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+}
+.albumlist .scrollset .item .right {
+  padding: 10rpx 0 10rpx 30rpx; 
+  font-size: 30rpx;
+  width: 80%;
+}
+.blue {
+  color: #045d7e;
+}
+.albumlist .scrollset .item .right .name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.albumlist .scrollset .item .right .artist {
+  font-size: 26rpx;
+  color: #8a8a8a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-top: 6rpx;
+}
+.albumlist .scrollset .item .right .publishTime {
+  padding-left: 10rpx;
+}

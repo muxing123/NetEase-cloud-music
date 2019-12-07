@@ -1,0 +1,235 @@
+/**index.wxss**/
+.outer {
+  padding: 0 20rpx;
+}
+.outer .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.outer .top .search {
+  width: 75%;
+}
+.outer .top .note {
+  width: 60rpx;
+  height: 60rpx;
+}
+.slide .scrollset {
+  height: 1000rpx;
+}
+.slide .scrollset .nav {
+  display: flex;
+  padding: 40rpx 0;
+  
+}
+.slide .scrollset .nav .item {
+  text-align: center;
+  flex: 1;
+}
+.slide .scrollset .nav .item .round {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background: red;
+  position: relative;
+  left: 20rpx;
+  text-align: center;
+}
+.slide .scrollset .nav .item .round .img {
+  width: 56rpx;
+  height: 56rpx;
+  position: relative;
+  top: 20rpx;
+}
+.slide .scrollset .nav .item .text {
+  padding-top: 10rpx;
+}
+
+.hotList .scrollset {
+  height: 1000rpx;
+}
+.hotList .scrollset .history {
+  padding: 30rpx 0;
+}
+.hotList .scrollset .history .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hotList .scrollset .history .top .head {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.hotList .scrollset .history .flex {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20rpx 0;
+}
+.hotList .scrollset .history .flex .term {
+  padding: 0 30rpx 10rpx 30rpx;
+  border-radius: 20rpx;
+  background: #EAEDED; 
+  margin-right: 10rpx;
+}
+.hotList .scrollset .title {
+  font-size: 26rpx;
+  font-weight: bold;
+  padding: 20rpx 0;
+}
+.hotList .scrollset .item {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20rpx;
+}
+.hotList .scrollset .item .left {
+  width: 40rpx;
+  text-align: center;
+  color: #99A3A4;
+  font-size: 26rpx; 
+}
+.red {
+  color: #F30707 !important;
+}
+.hotList .scrollset .item .right {
+  padding-left: 20rpx;
+  width: 90%;
+}
+.hotList .scrollset .item .right .rightTop {
+  display: flex;
+  justify-content: space-between;
+}
+.bold {
+  font-weight: bold !important;
+}
+.hotList .scrollset .item .right .rightTop .searchWord .hot {
+  color: #F30707;
+  font-size: 26rpx;
+  font-style: italic;
+  font-weight: bold;
+}
+.hotList .scrollset .item .right .rightTop .score {
+  font-size: 22rpx;
+  color: #99A3A4;
+}
+.hotList .scrollset .item .right .rightBottom {
+  font-size: 22rpx;
+  color: #99A3A4;
+  padding-top: 10rpx;
+}
+.searcSuggest {
+  width: 80%;
+  position: absolute;
+  top: 90rpx;
+  left: 20rpx;
+  background: white;
+  box-shadow: 0 0 12rpx #888888;
+  z-index: 10;
+}
+.searcSuggest .value {
+  font-size: 26rpx;
+  color: #045D7E;
+  padding: 20rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+.searcSuggest .item {
+  color: #515A5A;
+  padding: 20rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+  font-size: 26rpx;
+}
+.searcSuggest .item text {
+  padding-left: 10rpx !important;
+}
+.searchResult .playList {
+  position: relative;
+  bottom: 40rpx;
+  background: white;
+  padding-top: 40rpx; 
+}
+.searchResult .playList .scrollset {
+  height: 800rpx;
+  padding-bottom: 92rpx;
+}
+.searchResult .playList .scrollset .playAll {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0 30rpx 0;
+}
+.searchResult .playList .scrollset .playAll .left {
+  display: flex;
+  align-items: center;
+}
+.searchResult .playList .scrollset .playAll .left .img {
+  width: 40rpx;
+  height: 40rpx;
+  position: relative;
+  top: 6rpx;
+}
+.searchResult .playList .scrollset .playAll .left .text {
+  padding-left: 20rpx;
+  font-size: 30rpx;
+}
+.searchResult .playList .scrollset .playAll .right {
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+}
+.searchResult .playList .scrollset .playAll .right .menu {
+  width: 30rpx;
+  height: 30rpx;
+  padding-right: 10rpx;
+}
+.searchResult .playList .scrollset .item {
+  font-size: 26rpx;
+  padding: 0 0 30rpx 0;
+}
+
+.searchResult .playList .scrollset .item .left {
+  width: 80%;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.searchResult .playList .scrollset .item .left .name {
+  display: inline-block;
+  width: 80%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.searchResult .playList .scrollset .item .left .name .songName {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.searchResult .playList .scrollset .item .left .name .link {
+  font-size: 20rpx;
+  color: #969696;
+  padding-top: 8rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.blue {
+  color: #045D7E;
+}
+.searchResult .playList .scrollset .item .right {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+}
+
+.searchResult .playList .scrollset .item .right .img {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 30rpx;
+  position: relative;
+  top: 18rpx;
+}
+
+.searchResult .playList .scrollset .btOpen {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}

@@ -1,0 +1,69 @@
+<!--components/search/search.wxml-->
+<view class="lookup">
+  <view>音乐馆</view>
+  <view class="search">
+    <van-search value="{{ value }}" placeholder="请输入搜索关键词" use-action-slot bindsearch="onSearch" shape="round" bindchange="change" bindfocus="open">
+      <view slot="action" bindtap="onSearch" wx:if="{{show === 1}}">搜索</view>
+      <view slot="action" bindtap="close" wx:else>取消</view>
+    </van-search>
+  </view>
+  <view class="box">
+    <image src="../../images/note.png" class="note"></image>
+  </view>
+</view>
+<view class="searcSuggest" wx:if="{{value && show!==3}}">
+  <view class="value">
+    搜索"{{value}}"</view>
+  <view wx:for="{{albums}}" wx:key="{{index}}" class="item">
+    <van-icon name="search" />
+    <text class="text">{{item.artist.name}}{{item.name}}</text>
+  </view>
+  <view wx:for="{{artists}}" wx:key="{{index}}" class="item">
+    <van-icon name="search" />
+    <text class="text">{{item.name}}</text>
+  </view>
+  <view wx:for="{{mvs}}" wx:key="{{index}}" class="item">
+    <van-icon name="search" />
+    <text class="text">{item.artistName}}{{item.name}}</text>
+  </view>
+</view>
+<view class="searchResult" wx:if="{{show === 3}}">
+  <van-tabs active="{{ active }}" bind:click="setCat">
+    <van-tab wx:for="{{searchType}}" wx:key="{{index}}" title="{{item.type}}" name="{{item.cat}}">
+      <view class="playList">
+        <scroll-view scroll-y="true" class="scrollset">
+          <view class="playAll" bindtap="setOrder" data-id="{{songs[0].id}}">
+            <view class="left">
+              <view>
+                <image src="../../images/play.png" class="img"></image>
+              </view>
+              <view class="text">播放全部</view>
+            </view>
+            <view class="right">
+              <image src="../../images/menutwo.png" class="menu"></image>多选</view>
+          </view>
+          <view wx:for="{{songs}}" wx:key="{{index}}" class="item" bindtap="goPlay" data-index="{{index}}" data-id="{{item.id}}" data-item="{{item}}">
+            <view class="left">
+              <view class="name">
+                <view class="songName">
+                  <text wx:for="{{item.name}}" wx:key="{{index}}" class="{{item === value ? 'blue' : ''}}">{{item}}</text>
+                </view>
+                <view class="link">
+                  <text wx:for="{{item.artists[0].name}}" wx:key="{{index}}" class="{{item === value ? 'blue' : ''}}">{{item}}</text>-
+                  <text wx:for="{{item.album.name}}" wx:key="{{index}}" class="{{item === value ? 'blue' : ''}}">{{item}}</text>
+                </view>
+              </view>
+            </view>
+            <view class="right">
+              <image wx:if="{{item.mvid}}" class="img" src="../../images/playtwo.png"></image>
+              <image class="img" src="../../images/menu.png"></image>
+            </view>
+          </view>
+          <view class="btOpen" wx:if="{{btOpen}}">
+            <btplay track="{{track}}" open="{{open}}" src="{{src}}"></btplay>
+          </view>
+        </scroll-view>
+      </view>
+    </van-tab>
+  </van-tabs>
+</view>

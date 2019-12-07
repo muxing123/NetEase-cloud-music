@@ -1,0 +1,16 @@
+<!--components/singerunti/singerunti.wxml-->
+<view class="singerunti">
+  <scroll-view scroll-y="true" class="scrollset" bindscrolltolower="upload">
+    <view class="artists" wx:for="{{artists}}" wx:key="{{index}}" bindtap="goSingerDetail" data-id="{{item.id}}">
+      <view class="left">
+        <image src="{{item.picUrl}}" class="img" lazy-load="true"></image>
+        <text class="text {{item === value ? 'blue' : ''}}" wx:for="{{item.name}}" wx:key="{{index}}">{{item}}</text>
+        <text wx:if="{{item.alias[0]}}" class="gray">(<text class="{{item === value ? 'blue' : ''}}" wx:for="{{item.alias[0]}}" wx:key="{{index}}">{{item}}</text>)</text>
+      </view>
+      <view class="right" wx:if="{{item.accountId}}">
+        <image src="../../images/people.png" class="img" lazy-load="true"></image>
+        <text class="text">已入驻</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,20 @@
+<!--components/user/user.wxml-->
+<view class="user">
+  <scroll-view scroll-y="true" class="scrollset" bindscrolltolower="upload">
+    <view class="artists" wx:for="{{userprofiles}}" wx:key="{{index}}" bindtap="goUser" data-id="{{item.userId}}">
+      <view class="left">        
+        <image src="{{item.avatarUrl}}" class="img" lazy-load="true"></image>       
+        <view>
+          <text class="text {{item === value ? 'blue' : ''}}" wx:for="{{item.nickname}}" wx:key="{{index}}">{{item}}</text>
+          <image src="../../images/na.png" wx:if="{{item.gender === 1}}" class="gender"></image>
+          <image src="../../images/nv.png" wx:if="{{item.gender === 2}}" class="gender"></image>
+          <view class="gray">{{item.signature}}</view>
+        </view>
+      </view>
+      <view class="right">
+        <van-icon class="plus" name="plus" />
+        关注
+      </view>
+    </view>
+  </scroll-view>
+</view>

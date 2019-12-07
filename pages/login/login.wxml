@@ -1,0 +1,55 @@
+<!--pages/login/login.wxml-->
+<view class="login">
+  <view class="top">
+    <van-tabs bind:click="onClick">
+      <van-tab title="手机号登录">
+        <view class="inner">
+          <view class="phone">
+            <view class="left">
+              <text class="red">*</text>
+              <van-icon name="phone-o" class="icon" />
+              <text>手机号</text>
+            </view>
+            <input placeholder="请输入手机号" value="{{phone}}" class="input" bindinput="onPhone" />
+          </view>
+          <view class="phone">
+            <view class="left">
+              <text class="red">*</text>
+              <van-icon name="manager-o" class="icon" />
+              <text>密码</text>
+            </view>
+            <input placeholder="请输入密码" value="{{password}}" class="input" password="true" bindinput="onPassword" />
+          </view>
+          <view class="bottom">
+            <view class="left" bindtap="getPhone">立即登录</view>
+            <view class="right">立即注册</view>
+          </view>
+        </view>
+      </van-tab>
+      <van-tab title="邮箱登录">
+        <view class="inner">
+          <view class="phone">
+            <view class="left">
+              <text class="red">*</text>
+              <van-icon name="free-postage" class="icon" />
+              <text>邮箱</text>
+            </view>
+            <input placeholder="请输入网易邮箱" value="{{phone}}" bindinput="onPhone" class="input" />
+          </view>
+          <view class="phone">
+            <view class="left">
+              <text class="red">*</text>
+              <van-icon name="envelop-o" class="icon" />
+              <text>密码</text>
+            </view>
+            <input placeholder="请输入密码" value="{{password}}" bindinput="onPassword" class="input" password="true" />
+          </view>
+          <view class="bottom">
+            <view class="left" bindtap="getEmail">立即登录</view>
+            <view class="right">立即注册</view>
+          </view>
+        </view>
+      </van-tab>
+    </van-tabs>
+  </view>
+</view>

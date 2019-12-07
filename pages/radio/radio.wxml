@@ -1,0 +1,109 @@
+<!--pages/radio/radio.wxml-->
+<view class="radio">
+  <view class="bg">
+    <image src="{{djRadio.picUrl}}" class="img"></image>
+  </view>
+  <view class="raioInfo">
+    <view class="back">
+      <image src="../../images/arrow.png" class="arrow" bindtap="goTo"></image>
+      <view class="title">电台</view>
+    </view>
+    <view class="bottom">
+      <view class="left">
+        <view>{{djRadio.name}}</view>
+        <view class="subCount">{{djRadio.subCount}}已订阅</view>
+      </view>
+      <view class="right">
+        <van-icon name="star-o" />
+        <view>订阅</view>
+      </view>
+    </view>
+  </view>
+  <view class="playList">
+    <van-tabs>
+      <van-tab title="详情">
+        <scroll-view scroll-y="true" class="scrollset">
+          <view class="introduce">
+            <view class="title">主播</view>
+            <view class="dj">
+              <image src="{{djRadio.dj.avatarUrl}}" class="avatarimg"></image>
+              <view class="name">
+                {{djRadio.name}}
+                <view class="text">网易音乐人</view>
+              </view>
+              <van-icon name="arrow" color="#969696"/>
+            </view>
+            <view class="content">
+              <view class="title">电台内容简介</view>
+              分类:<view class="category">{{djRadio.category}}</view>
+              <view class="desc">{{djRadio.desc}}</view>
+            </view>
+          </view>
+          <view class="comment">
+            <view class="title">精彩评论</view>
+            <view class="item" wx:for="{{djRadio.commentDatas}}" wx:key="{{index}}">
+              <view class="user">
+                <image src="{{item.userProfile.avatarUrl}}" class="avatarimg"></image>
+                <view class="nickname">{{item.userProfile.nickname}}</view>
+              </view>
+              <view class="content">{{item.content}}</view>
+              <view class="programName"><view class="line"></view>{{item.programName}}</view>
+            </view>
+          </view>
+        </scroll-view>
+      </van-tab>
+      <van-tab title="节目">
+        <scroll-view scroll-y="true" class="scrollset" bindscrolltolower="upload">
+          <view class="playAll">
+            <view class="left">共{{count}}期</view>
+            <view class="right">
+              <view class="unify distance" bindtap="setAsc">
+                <image src="../../images/top.png" class="img" wx:if="{{asc}}"></image>
+                <image src="../../images/bottom.png" class="img" wx:else></image>
+                排序
+              </view>
+              <view class="unify">
+                <image src="../../images/menutwo.png" class="img"></image>
+                多选
+              </view>
+            </view>
+          </view>
+          <view wx:for="{{programs}}" wx:key="{{index}}" class="item" bindtap="goPlay" data-index="{{index}}" data-id="{{item.id}}" data-item="{{item}}">
+            <view class="left">
+              <view class="index">
+                <view wx:if="{{index === play}}">
+                  <image src="../../images/horn.png" class="img"></image>
+                </view>
+                <view wx:else>
+                  <view wx:if="{{asc}}">{{index + 1}}</view>
+                  <view wx:else>{{count - index}}</view>
+                </view>
+              </view>
+              <view class="name">
+                <view class="songName">{{item.name}}</view>
+                <view class="link">
+                  <view>{{item.createTime}}</view>
+                  <view class="listenerCount">
+                    <image src="../../images/right.png" class="img"></image>
+                    {{item.listenerCount}}
+                  </view>
+                  <view class="duration">
+                    <van-icon name="underway-o" color="#969696" size="{{12}}"/>
+                    {{item.duration}}
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class="right">
+              <image wx:if="{{item.mv}}" class="img" src="../../images/playtwo.png"></image>
+              <image class="img" src="../../images/menu.png"></image>
+            </view>
+          </view>
+          <view class="btOpen" wx:if="{{btOpen}}">
+            <btplay track="{{track}}" open="{{open}}"></btplay>
+          </view>
+        </scroll-view>
+      </van-tab>
+    </van-tabs>
+  </view>
+</view>

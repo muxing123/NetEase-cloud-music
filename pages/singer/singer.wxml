@@ -1,0 +1,24 @@
+<!--pages/singer/singer.wxml-->
+<view class="outer">
+  <view class="top">
+    <van-tabs active="{{ active }}" bind:click="setCat">
+      <van-tab wx:for="{{singerType}}" wx:key="{{index}}" title="{{item.type}}" name="{{item.cat}}">
+        <view class="inner">
+          <view class="Indexes">
+            <scroll-view class="scroll-view_H" scroll-x="true">
+              <view class="item {{num === index ? 'sel' : ''}}" wx:for="{{letterList}}" wx:key="{{index}}" bindtap="setNum" data-index="{{index}}" wx:if="{{cat !== 5001}}" data-item="{{item}}">{{item}}</view>
+            </scroll-view>
+          </view>
+          <view class="singerList">
+            <scroll-view scroll-y="true" class="scrollset">
+              <view class="artists" wx:for="{{artists}}" wx:key="{{index}}" bindtap="goTo" data-id="{{item.id}}">
+                <image src="{{item.picUrl}}" class="img" lazy-load="true"></image>
+                <text class="text">{{item.name}}</text>
+              </view>
+            </scroll-view>
+          </view>
+        </view>
+      </van-tab>
+    </van-tabs>
+  </view>
+</view>

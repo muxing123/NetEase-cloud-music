@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-popup": "../../lib/vant/popup/index",
+    "van-datetime-picker": "../../lib/vant/datetime-picker/index",
+    "van-area": "../../lib/vant/area/index"
+  }
+}

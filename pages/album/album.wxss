@@ -1,0 +1,248 @@
+/* pages/album/album.wxss */
+.album .bg .bgImg {
+  width: 100%;
+  height: 600rpx;
+  filter: blur(40px);
+}
+
+.content {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.content .tile {
+  display: flex;
+  width: 100%;
+  padding: 62rpx 0 20rpx 30rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.content .tile .arrow {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.content .tile .text {
+  color: white;
+  letter-spacing: 4rpx;
+  padding-left: 30rpx;
+}
+
+.content .tile .text .small {
+  font-size: 18rpx;
+  color: darkgray;
+}
+
+.content .show {
+  display: flex;
+  justify-content: space-between;
+  padding: 60rpx 30rpx 20rpx;
+  margin-top: 128rpx;
+}
+
+.content .show .left {
+  position: relative;
+}
+
+.content .show .left .cover {
+  width: 240rpx;
+  height: 240rpx;
+  border-radius: 10rpx;
+}
+
+.content .show .right {
+  width: 60%;
+}
+
+.content .show .right .name {
+  color: white;
+  font-size: 30rpx;
+  font-weight: bold;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+}
+
+.content .show .right .creator {
+  display: flex;
+  color: white;
+  padding: 20rpx 0;
+}
+
+.content .show .right .creator .nickname {
+  color: #e5e7e9;
+  font-size: 26rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding-right: 4rpx;
+}
+
+.content .show .right .creator .van-icon {
+  position: relative;
+  top: 4rpx;
+}
+
+.content .show .right .signature {
+  display: flex;
+  font-size: 20rpx;
+  color: #e0e0e0;
+}
+
+.content .show .right .signature .text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.content .show .right .signature .van-icon {
+  position: relative;
+  top: 2rpx;
+}
+
+.content .nav {
+  display: flex;
+  padding: 20rpx;
+}
+
+.content .nav .item {
+  color: white;
+  font-size: 20rpx;
+  flex: 1;
+  text-align-last: center;
+}
+
+.content .nav .item .img {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.tracks {
+  border-radius: 30rpx 30rpx 0 0;
+  background: white;
+}
+
+.tracks .top {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 10rpx 30rpx 30rpx;
+}
+
+.tracks .top .play {
+  display: flex;
+  font-size: 30rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+
+.tracks .top .play .text {
+  font-size: 26rpx;
+  color: #969696;
+}
+
+.tracks .top .play .img {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 20rpx;
+  position: relative;
+  top: 18rpx;
+}
+
+.tracks .top .collection {
+  display: flex;
+  border-radius: 40rpx;
+  background: red;
+  color: white;
+  font-size: 22rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  width: 240rpx;
+  justify-content: center;
+}
+
+.tracks .top .collection .van-icon {
+  margin-right: 10rpx;
+  position: relative;
+  top: 2rpx;
+}
+
+.tracks .playList .scrollset {
+  height: 968rpx;
+  padding-bottom: 92rpx;
+}
+
+.tracks .playList .scrollset .item {
+  font-size: 26rpx;
+  padding: 0 30rpx 30rpx 0;
+}
+
+.tracks .playList .scrollset .item .left {
+  width: 80%;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.tracks .playList .scrollset .item .left .index {
+  display: inline-block;
+  padding: 20rpx 30rpx;
+  width: 40rpx;
+  text-align: center;
+  position: relative;
+  bottom: 16rpx;
+  color: #969696;
+}
+
+.tracks .playList .scrollset .item .left .index .img {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.tracks .playList .scrollset .item .left .name {
+  display: inline-block;
+  width: 80%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.tracks .playList .scrollset .item .left .name .songName {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.tracks .playList .scrollset .item .left .name .link {
+  font-size: 20rpx;
+  color: #969696;
+  padding-top: 8rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.tracks .playList .scrollset .item .right {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+}
+
+.tracks .playList .scrollset .item .right .img {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 30rpx;
+  position: relative;
+  top: 18rpx;
+}
+
+.tracks .playList .scrollset .btOpen {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}

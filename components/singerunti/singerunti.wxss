@@ -1,0 +1,60 @@
+/* components/singerunti/singerunti.wxss */
+
+.singerunti .scrollset {
+  height: 900rpx;
+}
+
+.singerunti .scrollset .artists {
+  padding: 20rpx 10rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.singerunti .scrollset .artists .left {
+  display: flex;
+  align-items: center;
+  width: 80%;
+}
+
+.singerunti .scrollset .artists .left .img {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.singerunti .scrollset .artists .left .text {
+  font-size: 30rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.singerunti .scrollset .artists .left .gray {
+  font-size: 26rpx;
+  color: #8a8a8a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.blue {
+  color: #045d7e;
+}
+
+.singerunti .scrollset .artists .right {
+  display: flex;
+  align-items: center;
+}
+
+.singerunti .scrollset .artists .right .img {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+.singerunti .scrollset .artists .right .text {
+  font-size: 20rpx;
+  color: #8a8a8a;
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-icon": "../../lib/vant/icon/index",
+    "btplay": "../../components/btplay/btplay"
+  },
+  "navigationStyle": "custom"
+}

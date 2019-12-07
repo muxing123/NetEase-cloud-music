@@ -1,0 +1,87 @@
+/* pages/mine/mine.wxss */
+.mine {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding: 30rpx;
+}
+.mine .login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.mine .login .top {
+  font-size: 30rpx;
+  padding-bottom: 20rpx;
+}
+.mine .login .btn {
+  font-size: 26rpx;
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 10rpx;
+  background: #3498DB;
+  color: white;
+  position: relative;
+  left: 20rpx;
+}
+.mine .userInfo .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mine .userInfo .top .left{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+}
+.mine .userInfo .top .right {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+.mine .userInfo .top .right .nameLevel .level{
+  font-size: 26rpx;
+  text-align: center;
+  width: 80rpx;
+  border-radius: 40rpx;
+  background: #ECF0F1;
+  margin-top: 10rpx;
+}
+.mine .userInfo .top .right .sign {
+  font-size: 26rpx;
+  text-align: center;
+  width: 120rpx;
+  height: 46rpx;
+  line-height: 46rpx;
+  border-radius: 40rpx;
+  background: #909497;
+  color: white;
+}
+.mine .userInfo .nav {
+  margin-top: 50rpx;
+}
+.mine .userInfo .nav .content {
+  font-size: 34rpx;
+}
+.mine .userInfo .nav .text {
+  font-size: 24rpx;
+  color: #CACFD2;
+}
+.mine .userInfo .btn {
+  text-align: center;
+  width:180rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #DC7633;
+  border-radius: 10rpx;
+  color: white;
+  position: relative;
+  left: 50%;
+  margin-left: -90rpx;
+  margin-top: 100rpx;
+}

@@ -1,0 +1,87 @@
+<!--pages/album/album.wxml-->
+<view class="album">
+  <view class="bg">
+    <image src="{{album.blurPicUrl}}" class="bgImg"></image>
+  </view>
+  <view class="content">
+    <view class="tile">
+      <image src="../../images/arrow.png" class="arrow" bindtap="goTo"></image>
+      <view class="text">
+        <view>专辑</view>
+      </view>
+    </view>
+    <view class="show">
+      <view class="left">
+        <image src="{{album.blurPicUrl}}" class="cover"></image>
+      </view>
+      <view class="right">
+        <view class="name">{{album.name}}</view>
+        <view class="creator">
+          <view class="nickname">歌手: {{album.artist.name}}</view>
+          <van-icon name="arrow" size="12" color="#E5E7E9" />
+        </view>
+        <view class="signature">
+          <view class="text">发行时间: {{album.publishTime}}</view>
+          <van-icon name="arrow" size="12" color="#E0E0E0" />
+        </view>
+      </view>
+    </view>
+    <view class="nav">
+      <view class="item">
+        <image src="../../images/news.png" class="img"></image>
+        <view>{{album.info.commentCount}}</view>
+      </view>
+      <view class="item">
+        <image src="../../images/share.png" class="img"></image>
+        <view>{{album.info.shareCount}}</view>
+      </view>
+      <view class="item">
+        <image src="../../images/download.png" class="img"></image>
+        <view>下载</view>
+      </view>
+      <view class="item">
+        <image src="../../images/many.png" class="img"></image>
+        <view>多选</view>
+      </view>
+    </view>
+  </view>
+  <view class="tracks">
+    <view class="top">
+      <view class="play" bindtap="setOrder" data-id="{{songs[0].id}}">
+        <image src="../../images/play.png" class="img"></image>
+        <view>播放全部
+          <text class="text">(共{{songs.length}}首)</text>
+        </view>
+      </view>
+      <view class="collection">
+        <van-icon name="plus" />
+        <view>收藏 ({{songs.length}})</view>
+      </view>
+    </view>
+    <view class="playList">
+      <scroll-view scroll-y="true" class="scrollset">
+        <view wx:for="{{songs}}" wx:key="{{index}}" class="item" bindtap="goPlay" data-index="{{index}}" data-id="{{item.id}}" data-item="{{item}}">
+          <view class="left">
+            <view class="index">
+              <view wx:if="{{index === play}}">
+                <image src="../../images/horn.png" class="img"></image>
+              </view>
+              <view wx:else>{{index + 1}}</view>
+            </view>
+            <view class="name">
+              <view class="songName">{{item.name}}</view>
+              <view class="link">{{item.ar[0].name}}</view>
+            </view>
+          </view>
+          <view class="right">
+            <image wx:if="{{item.mv}}" class="img" src="../../images/playtwo.png"></image>
+            <image class="img" src="../../images/menu.png"></image>
+          </view>
+        </view>
+        <view class="btOpen" wx:if="{{btOpen}}">
+          <btplay track="{{track}}" open="{{open}}" src="{{src}}"></btplay>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

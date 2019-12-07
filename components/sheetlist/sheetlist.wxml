@@ -1,0 +1,20 @@
+<!--components/sheetlist/sheetlist.wxml-->
+<view class="sheetlist">
+  <scroll-view scroll-y="true" class="scrollset" bindscrolltolower="upload">
+    <view wx:for="{{playlists}}" wx:key="{{index}}" class="item" bindtap="goSheet" data-id="{{item.id}}">
+      <view class="left">
+        <image src="{{item.coverImgUrl}}" class="pic"></image>
+      </view>
+      <view class="right">
+        <view class="name">
+          <text class="{{itm === value ? 'blue' : ''}}" wx:for="{{item.name}}" wx:for-index="idx" wx:for-item="itm" wx:key="{{idx}}">{{itm}}</text>
+        </view>
+        <view class="artist">
+          <text>{{item.trackCount}}首</text>
+          by<text>{{item.creator.nickname}},</text>
+          <text class="playCount">播放{{item.playCount}}次</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

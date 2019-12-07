@@ -1,0 +1,53 @@
+/* components/dish/dish.wxss */
+.dish .top {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20rpx;
+}
+.dish .top .left {
+  line-height: 70rpx;
+  display: flex;
+}
+.dish .top .left .text {
+  color: #969696;
+  margin-right: 20rpx;
+  font-size: 30rpx;
+}
+.crude {
+  font-weight: bold;
+  color: black !important;
+  font-size: 36rpx !important;
+}
+.dish .top .right {
+  width: 180rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: #D7DBDD;
+  text-align: center;
+  border-radius: 40rpx; 
+}
+.dish .result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.dish .result .item {
+  width: 230rpx; 
+  margin-top: 20rpx;
+}
+.dish .result .item .img {
+  width: 230rpx;
+  height: 230rpx;
+  border-radius: 10rpx;
+}
+.dish .result .item .text {
+  /* 单行文本缩略 */
+  font-size: 26rpx;
+  /* 强制文本在一行内输出 */
+  white-space: nowrap;
+  /* 隐藏溢出部分 */
+  overflow: hidden; 
+  /* 对溢出部分加上... */
+  text-overflow: ellipsis;
+  padding: 20rpx 0; 
+}

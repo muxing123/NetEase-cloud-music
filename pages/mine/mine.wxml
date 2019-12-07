@@ -1,0 +1,41 @@
+<!--pages/mine/mine.wxml-->
+<view class="mine">
+  <view class="login" wx:if="{{!id}}">
+    <view class="top">您还没有登录哦</view>
+    <view class="btn" bindtap="goTo">立即登录</view>
+  </view>
+  <view class="userInfo" wx:else>
+    <view class="top">
+      <image class="left" src="{{userInfo.profile.avatarUrl}}"></image>
+      <view class="right">
+        <view class="nameLevel">
+          <view class="nickname">{{userInfo.profile.nickname}}</view>
+          <view class="level">Lv: {{userInfo.level}}</view>
+        </view>
+        <view class="sign" wx:if="{{sign}}">已签到</view>
+        <view class="sign" wx:else bindtap="getSign">签到</view>
+      </view>
+    </view>
+    <view class="nav">
+      <van-grid border="{{false}}">
+        <van-grid-item use-slot text="动态">
+          <view class="content">0</view>
+          <view class="text">动态</view>
+        </van-grid-item>
+        <van-grid-item use-slot text="关注">
+          <view class="content">{{follow}}</view>
+          <view class="text">关注</view>
+        </van-grid-item>
+        <van-grid-item use-slot text="粉丝">
+          <view class="content">{{fans}}</view>
+          <view class="text">粉丝</view>
+        </van-grid-item>
+        <van-grid-item use-slot text="粉丝" link-type="navigateTo" url="/pages/data/data">
+          <van-icon name="edit" size="{{18}}" />
+          <view class="text">编辑资料</view>
+        </van-grid-item>
+      </van-grid>
+    </view>
+    <view class="btn" bindtap="quit">退出登录</view>
+  </view>
+</view>

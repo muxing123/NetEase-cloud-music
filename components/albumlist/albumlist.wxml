@@ -1,0 +1,19 @@
+<!--components/albumlist/albumlist.wxml-->
+<view class="albumlist">
+  <scroll-view scroll-y="true" class="scrollset" bindscrolltolower="upload">
+    <view wx:for="{{albums}}" wx:key="{{index}}" class="item" bindtap="goAlbum" data-id="{{item.id}}">
+      <view class="left">
+        <image src="{{item.picUrl}}" class="pic"></image>
+      </view>
+      <view class="right">
+        <view class="name">
+          <text class="{{itm === value ? 'blue' : ''}}" wx:for="{{item.name}}" wx:for-index="idx" wx:for-item="itm" wx:key="{{idx}}">{{itm}}</text>
+        </view>
+         <view class="artist">
+          <text class="{{itm === value ? 'blue' : ''}}" wx:for="{{item.artist.name}}" wx:for-index="idx" wx:for-item="itm" wx:key="{{idx}}">{{itm}}</text>
+          <text class="publishTime">{{item.publishTime}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

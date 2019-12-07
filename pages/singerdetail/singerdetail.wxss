@@ -1,0 +1,140 @@
+/* pages/singerdetail/singerdetail.wxss */
+.singerdetail .bg .img {
+  width: 100%;
+}
+.singerdetail .singerInfo {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.singerdetail .singerInfo .back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 60rpx 0 0 30rpx;
+}
+.singerdetail .singerInfo .back .arrow {
+  width: 50rpx;
+  height: 50rpx;
+}
+.singerdetail .singerInfo .bottom {
+  display: flex;
+  padding: 30rpx;
+  justify-content: space-between;
+  position: relative;
+  top: 340rpx;
+}
+.singerdetail .singerInfo .bottom .left {
+  color: white;
+  font-weight: bold;
+}
+.singerdetail .singerInfo .bottom .right {
+  display: flex;
+  align-items: center;
+}
+.singerdetail .singerInfo .bottom .right .btn {
+  display: flex;
+  border-radius: 40rpx;
+  background: red;
+  color: white;
+  font-size: 20rpx;
+  padding: 10rpx 16rpx;
+  margin-right: 6rpx;
+}
+.grey {
+  background: #969696 !important;
+}
+.singerdetail .singerInfo .bottom .right .btn .van-icon {
+  position: relative;
+  top: 2rpx;
+  padding-right: 6rpx;
+}
+.singerdetail .playList {
+  position: relative;
+  bottom: 40rpx;
+  background: white;
+  border-radius: 20rpx 20rpx 0 0;
+}
+.singerdetail .playList .scrollset {
+  height: 968rpx;
+  padding-bottom: 92rpx;
+}
+.singerdetail .playList .scrollset .playAll {
+  display: flex;
+  padding: 30rpx;
+}
+.singerdetail .playList .scrollset .playAll .left .img {
+  width: 40rpx;
+  height: 40rpx;
+}
+.singerdetail .playList .scrollset .playAll .right {
+  font-weight: bold;
+  padding-left: 30rpx;
+}
+.singerdetail .playList .scrollset .item {
+  font-size: 26rpx;
+  padding: 0 30rpx 30rpx 0;
+}
+
+.singerdetail .playList .scrollset .item .left {
+  width: 80%;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.singerdetail .playList .scrollset .item .left .index {
+  display: inline-block;
+  padding: 20rpx 30rpx;
+  width: 40rpx;
+  text-align: center;
+  position: relative;
+  bottom: 16rpx;
+  color: #969696;
+}
+
+.singerdetail .playList .scrollset .item .left .index .img {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.singerdetail .playList .scrollset .item .left .name {
+  display: inline-block;
+  width: 80%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.singerdetail .playList .scrollset .item .left .name .songName {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.singerdetail .playList .scrollset .item .left .name .link {
+  font-size: 20rpx;
+  color: #969696;
+  padding-top: 8rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.singerdetail .playList .scrollset .item .right {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+}
+
+.singerdetail .playList .scrollset .item .right .img {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 30rpx;
+  position: relative;
+  top: 18rpx;
+}
+
+.singerdetail .playList .scrollset .btOpen {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}

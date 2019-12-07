@@ -1,0 +1,19 @@
+<!--components/btplay/btplay.wxml-->
+<view class="btplay">
+  <view class="bottom" bindtap="goPlay" data-id="{{track.id}}">
+    <view class="bt-left">
+      <image src="{{track.coverUrl}}" class="img" wx:if="{{track.coverUrl}}"></image> 
+      <image src="{{track.al.picUrl}}" class="img" wx:else></image>
+      <view class="notes">
+        <view class="name">{{track.name}}</view>
+        <view class="arname" wx:if="{{track.dj.nickname}}">{{track.dj.nickname}}</view>
+        <view class="arname" wx:else>{{track.ar[0].name}}</view>
+      </view>
+    </view>
+    <view class="bt-right">
+      <image src="../../images/suspend.png" class="suspend" wx:if="{{open}}" catchtap="setSuspend"></image>
+      <image src="../../images/playthree.png" class="suspend" wx:else catchtap="setPlayTwo"></image>
+      <image src="../../images/menutwo.png" class="img"></image>
+    </view>
+  </view>
+</view>

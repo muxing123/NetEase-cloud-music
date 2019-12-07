@@ -1,0 +1,70 @@
+<!--pages/play/play.wxml-->
+<view class="play">
+  <view class="bg">
+    <image src="{{song.coverUrl}}" class="bgImg" wx:if="{{song.coverUrl}}"></image>
+    <image src="{{song.al.picUrl}}" class="bgImg" wx:else></image>
+  </view>
+  <view class="content">
+    <view class="topNav">
+      <view class="left">
+        <image src="../../images/arrow.png" class="arrow" bindtap="goTo"></image>
+      </view>
+      <view class="right">
+        <view>{{song.name}}</view>
+        <view class="small" wx:if="{{song.dj.nickname}}">{{song.dj.nickname}}</view>
+        <view class="small" wx:else>{{song.ar[0].name}}</view>
+        <van-icon name="arrow" size="12" color="darkgray" />
+      </view>
+    </view>
+    <view class="songCover">
+      <view class="dish {{play === true ? 'stop' : ''}}">
+        <image src="{{song.coverUrl}}" class="rotate" wx:if="{{song.coverUrl}}"></image>
+        <image src="{{song.al.picUrl}}" class="rotate" wx:else></image>
+      </view>
+    </view>
+    <view class="playBar">
+      <view class="topOperation">
+        <view class="item">
+          <image src="../../images/heart.png" class="img"></image>
+        </view>
+        <view class="item">
+          <image src="../../images/down.png" class="img"></image>
+        </view>
+        <view class="item">
+          <image src="../../images/free.png" class="img"></image>
+        </view>
+        <view class="item">
+          <image src="../../images/message.png" class="img"></image>
+        </view>
+        <view class="item">
+          <image src="../../images/details.png" class="img"></image>
+        </view>
+      </view>
+      <view class="playProgress">
+        <view class="fromDuration">{{valuePlay}}</view>
+        <slider bindchange="slider1change" block-size="{{12}}" value="{{value}}" max="{{maxValue}}" class="slider" bindchange="sliderchange" />
+        <view class="toDuration">{{maxValuePlay}}</view>
+      </view>
+      <view class="topOperation">
+        <view class="item">
+          <image wx:if="{{num === 0}}" src="../../images/order.png" class="img" bindtap="setPlayOrder" data-num="{{1}}"></image>
+          <image wx:if="{{num === 1}}" src="../../images/random.png" class="img" bindtap="setPlayOrder" data-num="{{2}}"></image>
+          <image wx:if="{{num === 2}}" src="../../images/loop.png" class="img" bindtap="setPlayOrder" data-num="{{0}}"></image>
+        </view>
+        <view class="item">
+          <image src="../../images/previous.png" class="img" bindtap="previous"></image>
+        </view>
+        <view class="item">
+          <image wx:if="{{play}}" src="../../images/playfour.png" class="Bigimg" bindtap="setPlay"></image>
+          <image wx:else src="../../images/suspendtwo.png" class="Bigimg" bindtap="setSuspend"></image>
+        </view>
+        <view class="item">
+          <image src="../../images/next.png" class="img" bindtap="next"></image>
+        </view>
+        <view class="item">
+          <image src="../../images/menuthree.png" class="img"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

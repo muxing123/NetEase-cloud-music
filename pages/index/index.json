@@ -1,0 +1,22 @@
+{
+  "usingComponents": {
+    "van-search": "../../lib/vant/search/index",
+    "wheel": "../../components/wheel/wheel",
+    "recommend": "../../components/recommend/recommend",
+    "dish": "../../components/dish/dish",
+    "power": "../../components/power/power",
+    "radio": "../../components/radio/radio",
+    "program": "../../components/program/program",
+    "search": "../../components/search/search",
+    "van-tab": "../../lib/vant/tab/index",
+    "van-tabs": "../../lib/vant/tabs/index",
+    "btplay": "../../components/btplay/btplay",
+    "videos": "../../components/videos/videos",
+    "van-icon": "../../lib/vant/icon/index",
+    "singerunti": "../../components/singerunti/singerunti",
+    "albumlist": "../../components/albumlist/albumlist",
+    "sheetlist": "../../components/sheetlist/sheetlist",
+    "radiolist": "../../components/radiolist/radiolist",
+    "user": "../../components/user/user"
+  }
+}

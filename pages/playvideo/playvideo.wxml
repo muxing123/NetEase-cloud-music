@@ -1,0 +1,65 @@
+<!--pages/playvideo/playvideo.wxml-->
+<view class="playvideo">
+  <view class="major">
+    <!-- <view class="play">
+      <image src="{{detail.coverUrl}}" class="cover"></image>
+    </view> -->
+    <video id="myVideo" src="{{url}}">
+      <cover-view bindtap="setShow" class="coverview" wx:if="{{show}}">
+        <cover-image src="{{detail.coverUrl}}" class="cover"/>
+        <cover-image src="../../images/playfive.png" class="playfive"/>
+      </cover-view>
+    </video>
+    <view class="title">{{detail.title}}</view>
+    <view class="msg">
+      <view class="creator">
+        <image src="{{detail.creator.avatarUrl}}" class="avatar"></image>
+        <view class="nickname">{{detail.creator.nickname}}</view>
+      </view>
+      <view class="allCount">
+        <view class="count">
+          <van-icon name="good-job-o" size="20" />
+          <view class="num">{{detail.praisedCount}}</view>
+        </view>
+        <view class="count">
+          <image src="../../images/message.png" class="img"></image>
+          <view class="num">{{detail.commentCount}}</view>
+        </view>
+        <view class="count">
+          <image src="../../images/menu.png" class="menu"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="major" wx:for="{{related}}" wx:key="{{index}}">
+    <!-- <view class="play">
+      <image src="{{item.coverUrl}}" class="cover"></image>
+    </view> -->
+    <video id="myVideo" src="{{url}}">
+      <cover-view bindtap="setShow" class="coverview" wx:if="{{show}}">
+        <cover-image src="{{item.coverUrl}}" class="cover"/>
+        <cover-image src="../../images/playfive.png" class="playfive"/>
+      </cover-view>
+    </video>
+    <view class="title">{{item.title}}</view>
+    <view class="msg">
+      <view class="creator">
+        <image src="{{item.creator[0].avatarUrl}}" class="avatar"></image>
+        <view class="nickname">{{item.creator[0].userName}}</view>
+      </view>
+      <view class="allCount">
+        <view class="count">
+          <van-icon name="good-job-o" size="20" />
+          <view class="num">{{detail.praisedCount}}</view>
+        </view>
+        <view class="count">
+          <image src="../../images/message.png" class="img"></image>
+          <view class="num">{{detail.commentCount}}</view>
+        </view>
+        <view class="count">
+          <image src="../../images/menu.png" class="menu"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

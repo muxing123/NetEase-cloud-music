@@ -1,0 +1,12 @@
+<!--components/wheel/wheel.wxml-->
+<view>
+  <swiper indicator-dots="{{true}}" autoplay="{{true}}">
+    <block wx:for="{{banners}}" wx:key="*this">
+      <swiper-item class="radius">
+        <view class="box">
+          <image src="{{item.pic}}" class="img"></image>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

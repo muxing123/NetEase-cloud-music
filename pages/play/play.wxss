@@ -1,0 +1,143 @@
+/* pages/play/play.wxss */
+
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.bg .bgImg {
+  width: 100%;
+  height: 100%;
+  filter: blur(20px);
+}
+
+.content {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.content .topNav {
+  display: flex;
+  padding: 50rpx 0 20rpx 30rpx;
+}
+
+.content .topNav .left .arrow {
+  width: 50rpx;
+  height: 50rpx;
+  position: relative;
+  top: 18rpx;
+}
+
+.content .topNav .right {
+  color: white;
+  letter-spacing: 4rpx;
+  padding-left: 30rpx;
+  position: relative;
+}
+
+.content .topNav .right .small {
+  font-size: 24rpx;
+  color: darkgray;
+}
+
+.content .topNav .right .van-icon {
+  position: absolute;
+  top: 48rpx;
+  left: 110rpx;
+}
+
+.content .songCover {
+  padding-top: 240rpx;
+}
+
+.content .songCover .dish {
+  height: 400rpx;
+  width: 400rpx;
+  border-radius: 50%;
+  background: black;
+  margin: 0 auto;
+  box-shadow: 0px 0px 20px black;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: move 22s linear infinite;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stop {
+  animation-play-state: paused !important;
+}
+
+.content .songCover .dish .rotate {
+  height: 300rpx;
+  width: 300rpx;
+  border-radius: 50%;
+}
+
+
+.content .playBar {
+  padding-top: 140rpx;
+}
+
+.content .playBar .topOperation {
+  display: flex;
+  align-items: center;
+}
+
+.content .playBar .topOperation .item {
+  flex: 1;
+  text-align: center;
+}
+
+.content .playBar .topOperation .item .img {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.content .playBar .topOperation .item .Bigimg {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.content .playBar .playProgress {
+  position: relative;
+  width: 100%;
+}
+
+.content .playBar .playProgress .fromDuration {
+  color: white;
+  font-size: 20rpx;
+  position: absolute;
+  top: 4rpx;
+  left: 0;
+  padding: 0 20rpx 0 30rpx;
+}
+
+.content .playBar .playProgress .toDuration {
+  color: white;
+  font-size: 20rpx;
+  position: absolute;
+  top: 4rpx;
+  right: 0;
+  padding: 0 30rpx 0 20rpx;
+}
+
+.content .playBar .playProgress .slider {
+  width: 70%;
+  position: relative;
+  left: 80rpx;
+}

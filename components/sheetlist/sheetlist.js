@@ -1,0 +1,87 @@
+// components/sheetlist/sheetlist.js
+const app = getApp()
+Component({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+    value: {
+      type: String,
+      value: ""
+    }
+  },
+
+  /**
+   * 组件的初始数据
+   */
+  data: {
+    offset: 0,
+    playlists: []
+  },
+
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+    // 去歌单页面
+    goSheet(e) {
+      wx.navigateTo({
+        url: `/pages/sheet/sheet?id=${e.currentTarget.dataset.id}`,
+      })
+    },
+    // 搜索结果
+    getSearch() {
+      wx.showLoading({
+        title: '加载中',
+      })
+      app.globalData.fly.get(`/search?keywords=${this.data.value}&type=1000&offset=${this.data.offset}`).then(res => {
+        if (res.data) {
+          wx.hideLoading()
+          if (this.data.offset === 0) {
+            res.data.result.playlists.map(item => {
+              item.name = this.getHilightStrArray(item.name, this.data.value)
+              let num = item.playCount / 10000
+              if(num > 10) {
+                item.playCount = Math.round(item.playCount / 10000) + '万'
+              }
+            })
+            this.setData({
+              playlists: res.data.result.playlists
+            })
+          } else {
+            res.data.result.playlists.map(item => {
+              item.name = this.getHilightStrArray(item.name, this.data.value)
+              let num = item.playCount / 10000
+              if (num > 10) {
+                item.playCount = Math.round(item.playCount / 10000) + '万'
+              }
+            })
+            this.setData({
+              playlists: this.data.playlists.concat(res.data.result.playlists)
+            })
+          }
+        }
+        console.log(res, "搜索结果歌单")
+      }).catch(err => {
+        wx.hideLoading()
+        console.log(err)
+      })
+    },
+    // 搜索关键字高亮显示
+    //返回一个使用key切割str后的数组，key仍在数组中
+    getHilightStrArray(str, key) {
+      return str.replace(new RegExp(`${key}`, 'g'), `%%${key}%%`).split('%%');
+    },
+    // 上拉加载
+    upload() {
+      this.data.offset += 30
+      this.setData({
+        offset: this.data.offset
+      })
+      this.getSearch()
+    }
+  },
+  ready: function () {
+    this.getSearch()
+  }
+})

@@ -1,0 +1,130 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.9.2",
+	"appid": "wx02ff89cb6f3968f2",
+	"projectname": "NeteaseCloudMusic",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/singer/singer",
+					"pathName": "pages/singer/singer",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "pages/mine/mine",
+					"pathName": "pages/mine/mine",
+					"query": "id=2056619966",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/login/login",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/data/data",
+					"pathName": "pages/data/data",
+					"query": "id=2056619966",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "pages/sheet/sheet",
+					"pathName": "pages/sheet/sheet",
+					"query": "id=3042852466&copywriter= 编辑推荐：感恩节，记得对自己说一声谢谢~",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/play/play",
+					"pathName": "pages/play/play",
+					"query": "id=1370007645",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/singerdetail/singerdetail",
+					"pathName": "pages/singerdetail/singerdetail",
+					"query": "id=5781",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/playvideo/playvideo",
+					"pathName": "pages/playvideo/playvideo",
+					"query": "id=73421441645C355214A3AFDDB0123C5B",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/album/album",
+					"pathName": "pages/album/album",
+					"query": "id=2883636",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/radio/radio",
+					"pathName": "pages/radio/radio",
+					"query": "id=791635420",
+					"scene": null
+				}
+			]
+		}
+	}
+}

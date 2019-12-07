@@ -1,0 +1,46 @@
+/* components/radio/radio.wxss */
+.radio .top {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20rpx;
+}
+.radio .top .left {
+  line-height: 70rpx;
+}
+.radio .top .right {
+  width: 180rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: #D7DBDD;
+  text-align: center;
+  border-radius: 40rpx; 
+}
+.radio .result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.radio .result .item {
+  width: 230rpx; 
+  margin-top: 20rpx;
+}
+.radio .result .item .box {
+  width: 230rpx;
+  height: 230rpx;
+}
+.radio .result .item .box .img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+.radio .result .item .text {
+  /* 单行文本缩略 */
+  font-size: 26rpx;
+  /* 强制文本在一行内输出 */
+  white-space: nowrap;
+  /* 隐藏溢出部分 */
+  overflow: hidden; 
+  /* 对溢出部分加上... */
+  text-overflow: ellipsis;
+  padding: 20rpx 0; 
+}

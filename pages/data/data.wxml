@@ -1,0 +1,34 @@
+<!--pages/data/data.wxml-->
+<view class="data">
+  <view class="option">
+    <view class="describe">昵称</view>
+    <input class="input" bindinput="setNickname" value="{{nickname}}" />
+  </view>
+  <view class="option">
+    <view class="describe">性别</view>
+    <input class="input" bindfocus="setPopGender" value="{{gender}}" />
+  </view>
+  <van-popup show="{{ showGender }}" custom-style="width: 80%;" bind:close="onClose">
+    <view class="select {{num === 1? 'color' : ''}}" bindtap="setGender" data-num="{{1}}">男</view>
+    <view class="select {{num === 2? 'color' : ''}}" bindtap="setGender" data-num="{{2}}">女</view>
+  </van-popup>
+  <view class="option">
+    <view class="describe">生日</view>
+    <input class="input" bindfocus="setPop" value="{{birthday}}" />
+  </view>
+  <van-popup show="{{ show }}" position="bottom" custom-style="height: 50%;" bind:close="onClose">
+    <van-datetime-picker type="date" value="{{ currentDate  }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" formatter="{{ formatter }}" bindcancel="onClose" bindconfirm="setBirthday" />
+  </van-popup>
+  <view class="option">
+    <view class="describe">城市</view>
+    <input class="input" bindfocus="setPopCity" value="{{town}}" />
+  </view>
+  <van-popup show="{{ showCity }}" position="bottom" custom-style="height: 50%;" bind:close="onClose">
+    <van-area area-list="{{ areaList }}" columns-placeholder="{{ ['请选择','请选择'] }}" title="请选择省市" columns-num="{{ 2 }}" value="{{city}}" bindconfirm="setTwon" bindcancel="onClose" />
+  </van-popup>
+  <view class="autograph">
+    <view class="describe">签名</view>
+    <textarea value="{{signature}}" class="content" bindinput="setSignature" placeholder="还没有个性签名哦" />
+  </view>
+  <view class="btn" bindtap="modify">确认修改</view>
+</view>

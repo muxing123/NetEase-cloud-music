@@ -1,0 +1,47 @@
+/* pages/login/login.wxss */
+.inner {
+  padding-top: 40rpx;
+}
+.phone {
+  border: 2rpx solid #f2f2f2;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.phone .left .red {
+  color: red;
+  padding: 0 4rpx 0 20rpx;
+}
+.phone .left .icon {
+  padding-right: 20rpx;
+  position: relative;
+  top: 4rpx;
+}
+.phone .input {
+  width: 60%;
+  height: 100%;
+}
+.bottom {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 100rpx;
+}
+.bottom .left {
+  width: 160rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: #C62828;
+  border-radius: 10rpx;
+  color: white;
+}
+.bottom .right {
+  width: 160rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: #DC7633;
+  border-radius: 10rpx;
+  color: white;
+}

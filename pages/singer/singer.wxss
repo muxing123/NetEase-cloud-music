@@ -1,0 +1,37 @@
+/* pages/singer/singer.wxss */
+.Indexes {
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 20rpx 0 0 22rpx;
+}
+.Indexes .scroll-view_H {
+  width: 100%;
+}
+.Indexes .scroll-view_H .item {
+  display: inline-block;
+  width: 44rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  text-align: center;
+}
+.sel {
+  background: red;
+  color: white;
+}
+.singerList .scrollset {
+  height: 1000rpx;
+}
+.singerList .scrollset .artists {
+  padding: 20rpx 0 20rpx 30rpx; 
+}
+.singerList .scrollset .artists .img {
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  margin-right: 50rpx;
+}
+.singerList .scrollset .artists .text {
+  position: relative;
+  bottom: 56rpx;
+  font-size: 30rpx;
+}

@@ -1,0 +1,66 @@
+/* components/user/user.wxss */
+.user .scrollset {
+  height: 900rpx;
+}
+
+.user .scrollset .artists {
+  padding: 20rpx 10rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user .scrollset .artists .left {
+  display: flex;
+  align-items: center;
+  width: 80%;
+}
+
+.user .scrollset .artists .left .img {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.user .scrollset .artists .left .text {
+  font-size: 30rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.user .scrollset .artists .left .gender {
+  width: 24rpx;
+  height: 24rpx;
+  margin-left: 6rpx;
+}
+.user .scrollset .artists .left .gray {
+  font-size: 20rpx;
+  color: #8a8a8a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-top: 12rpx;
+}
+
+.blue {
+  color: #045d7e;
+}
+
+.user .scrollset .artists .right {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rpx 10rpx;
+  color: red;
+  border: 2rpx solid red; 
+  border-radius: 40rpx;
+  font-size: 20rpx; 
+}
+
+.user .scrollset .artists .right .plus {
+  margin-right: 10rpx;
+}
+
+

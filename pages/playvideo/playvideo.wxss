@@ -1,0 +1,72 @@
+/* pages/playvideo/playvideo.wxss */
+.playvideo {
+  background: #5D6268;
+}
+.playvideo .major .play .cover {
+  width: 100%;
+  height: 400rpx;
+}
+#myVideo {
+  width: 100%;
+}
+#myVideo .coverview {
+  position: relative;
+  height: 100%;
+}
+#myVideo .coverview .playfive {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.playvideo .major .title {
+  font-size: 30rpx;
+  color: white;
+  padding: 20rpx 10rpx;
+}
+.playvideo .major .msg {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 26rpx;
+  color: #C5C7CA;
+  padding: 16rpx 15rpx 16rpx 10rpx;
+  border-top: 2rpx solid #969696;
+}
+.playvideo .major .msg .creator {
+  display: flex;
+  align-items: center;
+}
+.playvideo .major .msg .creator .avatar {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+}
+.playvideo .major .msg .creator .nickname {
+  display: inline-block;
+  padding-left: 10rpx; 
+}
+.playvideo .major .msg .allCount {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 60%;
+}
+.playvideo .major .msg .allCount .count {
+  display: flex;
+  align-items: center;
+}
+.playvideo .major .msg .allCount .count .num {
+  display: inline-block;
+  padding-left: 10rpx; 
+}
+.playvideo .major .msg .allCount .count .img {
+  width: 40rpx;
+  height: 40rpx;
+}
+.playvideo .major .msg .allCount .count .menu {
+  width: 30rpx;
+  height: 30rpx;
+}

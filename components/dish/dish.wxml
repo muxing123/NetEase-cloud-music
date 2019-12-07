@@ -1,0 +1,26 @@
+<!--components/dish/dish.wxml-->
+<view class="dish">
+  <view class="top">
+    <view class="left">
+      <view class="text {{num === 0 ? 'crude' : ''}}" bindtap="setNum" data-num="{{0}}">新碟</view>
+      <view class="text {{num === 1 ? 'crude' : ''}}" bindtap="setNum" data-num="{{1}}">新歌</view>
+    </view>
+    <view class="right" wx:if="{{num === 0}}">更多新碟</view>
+    <view class="right" wx:if="{{num === 1}}">新歌推荐</view>
+  </view>
+  <view class="result" wx:if="{{num === 0}}">
+    <view wx:for="{{result}}" wx:key="{{index}}" class="item" bindtap="goAlbum" data-id="{{item.id}}">
+      <image src="{{item.picUrl}}" class="img" lazy-load="{{true}}"></image>
+      <view class="text">{{item.name}}</view>
+    </view>
+  </view>
+  <view class="result" wx:if="{{num === 1}}">
+    <view wx:for="{{result}}" wx:key="{{index}}" class="item" bindtap="goPlay" data-id="{{item.id}}">
+      <image src="{{item.album.picUrl}}" class="img" lazy-load="{{true}}"></image>
+      <view class="text">
+        {{item.name}}
+        <view>{{item.artists[0].name}}</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-grid": "../../lib/vant/grid/index",
+    "van-grid-item": "../../lib/vant/grid-item/index",
+    "van-icon": "../../lib/vant/icon/index"
+  }
+}

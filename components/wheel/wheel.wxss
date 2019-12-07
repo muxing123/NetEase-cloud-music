@@ -1,0 +1,13 @@
+/* components/wheel/wheel.wxss */
+.radius {
+  border-radius: 14rpx;
+}
+.radius .box {
+  width: 100%;
+  height: 100%;
+}
+.radius .box .img {
+  width: 100%;
+  height: 100%;
+  border-radius: 14rpx;
+}

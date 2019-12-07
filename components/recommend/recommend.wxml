@@ -1,0 +1,15 @@
+<!--components/recommend/recommend.wxml-->
+<view class="recommendation">
+  <view class="top">
+    <view class="left">推荐歌单</view>
+    <view class="right">歌单广场</view>
+  </view>
+  <view class="result">
+    <view wx:for="{{result}}" wx:key="{{key}}" class="item" bindtap="goTo" data-id="{{item.id}}" data-copywriter="{{item.copywriter}}">
+      <view class="box">
+        <image src="{{item.picUrl}}" class="img"></image>
+      </view>
+      <view class="text">{{item.name}}</view>
+    </view>
+  </view>
+</view>

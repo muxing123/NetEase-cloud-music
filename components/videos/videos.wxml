@@ -1,0 +1,23 @@
+<!--components/video/video.wxml-->
+<view class="video">
+  <scroll-view scroll-y="true" class="scrollset" bindscrolltolower="upload">
+    <view class="item" wx:for="{{videos}}" wx:key="{{index}}" bindtap="govideo" data-id="{{item.vid}}">
+      <view class="left">
+        <image src="{{item.coverUrl}}" class="img"></image>
+        <view class="playTime">
+          <image src="../../images/Triangle.png" class="Triangle"></image>{{item.playTime}}
+        </view>
+      </view>
+      <view class="right">
+        <view class="title">
+          <text wx:for="{{item.title}}" wx:key="{{index}}" class="{{item === value ? 'blue' : ''}}">{{item}}</text>
+        </view>
+        <view class="introduce">
+          <text>{{item.durationms}}</text>
+          <text class="by">by</text>
+          <text wx:for="{{item.creator[0].userName}}" wx:key="{{index}}" class="{{item === value ? 'blue' : ''}}">{{item}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
