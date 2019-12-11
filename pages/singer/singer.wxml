@@ -10,7 +10,7 @@
             </scroll-view>
           </view>
           <view class="singerList">
-            <scroll-view scroll-y="true" class="scrollset">
+            <scroll-view scroll-y="true" class="scrollset" bindscrolltolower="upload">
               <view class="artists" wx:for="{{artists}}" wx:key="{{index}}" bindtap="goTo" data-id="{{item.id}}">
                 <image src="{{item.picUrl}}" class="img" lazy-load="true"></image>
                 <text class="text">{{item.name}}</text>

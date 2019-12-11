@@ -36,6 +36,12 @@ Component({
         wx.hideLoading()
         console.log(err)
       })
+    },
+    // 去电台页面
+    goRadio(e) {
+      wx.navigateTo({
+        url: `/pages/radio/radio?id=${e.currentTarget.dataset.id}`,
+      })
     }
   },
   /**

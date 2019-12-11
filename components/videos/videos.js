@@ -8,6 +8,10 @@ Component({
     value: {
       type: String,
       value: ""
+    },
+    history: {
+      type: Array,
+      value: []
     }
   },
 
@@ -28,6 +32,10 @@ Component({
       wx.navigateTo({
         url: `/pages/playvideo/playvideo?id=${e.currentTarget.dataset.id}`,
       })
+      if (this.data.history.indexOf(this.data.value) < 0) {
+        this.data.history.unshift(this.data.value)
+        wx.setStorageSync("history", this.data.history)
+      }
     },
     // 搜索结果
     getSearch() {

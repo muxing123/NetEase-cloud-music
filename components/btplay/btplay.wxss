@@ -1,4 +1,5 @@
 /* components/btplay/btplay.wxss */
+
 .btplay .bottom {
   display: flex;
   justify-content: space-between;
@@ -11,6 +12,7 @@
 
 .btplay .bottom .bt-left {
   display: flex;
+  width: 75%;
 }
 
 .btplay .bottom .bt-left .img {
@@ -20,9 +22,15 @@
 }
 
 .btplay .bottom .bt-left .notes {
+  font-size: 30rpx;
   padding-left: 10rpx;
+  width: 80%;
 }
-
+.btplay .bottom .bt-left .notes .name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .btplay .bottom .bt-left .notes .arname {
   color: #969696;
   font-size: 20rpx;

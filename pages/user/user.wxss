@@ -1,1 +1,215 @@
 /* pages/user/user.wxss */
+
+.user .bg .img {
+  width: 100%;
+  filter: brightness(60%);
+}
+
+.user .raioInfo {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.user .raioInfo .back {
+  padding: 60rpx 0 0 30rpx;
+  display: flex;
+  align-items: center;
+}
+
+.user .raioInfo .back .arrow {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.user .raioInfo .bottom {
+  display: flex;
+  padding: 20rpx 30rpx;
+  justify-content: space-between;
+  
+  margin-top: 20rpx;
+}
+
+.user .raioInfo .bottom .left {
+  color: white;
+  font-size: 28rpx;
+}
+
+.user .raioInfo .bottom .left .avatarimg {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-bottom: 20rpx;
+}
+.user .raioInfo .bottom .left .nickname {
+  font-weight: bold;
+}
+.user .raioInfo .bottom .left .flex {
+  margin-top: 10rpx;
+  display: flex;
+  color: #FEFAFA;
+  font-size: 26rpx;
+}
+.user .raioInfo .bottom .left .flex .line {
+  height: 20rpx;
+  border-right: 2rpx solid #969696;
+  margin: auto 18rpx; 
+}
+.user .raioInfo .bottom .left .level {
+  margin-top: 10rpx;
+  width: 24%;
+  background: #969696;
+  padding: 4rpx 8rpx;
+  border-radius: 40rpx; 
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.user .raioInfo .bottom .right {
+  display: flex;
+  align-items: flex-end;
+}
+
+.user .raioInfo .bottom .right .btn {
+  display: flex;
+  border-radius: 40rpx;
+  background: red;
+  color: white;
+  font-size: 20rpx;
+  padding: 10rpx 16rpx;
+  margin-right: 6rpx;
+  justify-content: center;
+}
+
+.width {
+  width: 100rpx;
+}
+
+.grey {
+  background: #969696 !important;
+}
+
+.user .raioInfo .bottom .right .van-icon {
+  position: relative;
+  top: 2rpx;
+  padding-right: 6rpx;
+}
+
+.user .playList {
+  position: relative;
+  bottom: 40rpx;
+  background: white;
+  border-radius: 20rpx 20rpx 0 0;
+}
+
+.user .playList .van-tabs--line .van-tabs__wrap {
+  border-radius: 20rpx 20rpx 0 0;
+}
+
+.user .playList .scrollset {
+  height: 900rpx;
+  padding-bottom: 92rpx;
+}
+.user .playList .scrollset .listen {
+  padding: 24rpx 30rpx;
+}
+.user .playList .scrollset .listen .same {
+  display: flex;
+  margin-bottom: 20rpx;
+}
+
+.user .playList .scrollset .listen .same .imgBox {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+  background: #DB6D6D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20rpx;
+}
+.dif {
+  background: #E5E7E9 !important;
+}
+.user .playList .scrollset .listen .same .imgBox .img {
+  width: 40rpx;
+  height: 40rpx;
+}
+.user .playList .scrollset .listen .same .words {
+  font-size: 26rpx;
+  padding-top: 10rpx;
+}
+.user .playList .scrollset .listen .same .words .count {
+  color: #969696;
+  font-size: 20rpx;
+  padding-top: 10rpx;
+}
+
+.user .playList .scrollset .create{
+   padding: 24rpx 30rpx;
+}
+.user .playList .scrollset .create .title {
+  font-weight: bold;
+  font-size: 28rpx;
+  padding-bottom: 20rpx;
+}
+.user .playList .scrollset .create .title .length {
+  font-size: 22rpx;
+  color: #969696;
+  font-weight: 400;
+}
+.user .playList .scrollset .create .item {
+  display: flex;
+}
+.user .playList .scrollset .create .item .left .pic {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+}
+.user .playList .scrollset .create .item .right {
+  padding: 10rpx 0 10rpx 30rpx; 
+  width: 80%;
+}
+.blue {
+  color: #045d7e;
+}
+.user .playList .scrollset .create .item .right .name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 26rpx;
+}
+.user .playList .scrollset .create .item .right .artist {
+  font-size: 20rpx;
+  color: #8a8a8a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-top: 6rpx;
+}
+.user .playList .scrollset .create .item .right .artist .playCount {
+  padding-left: 10rpx;
+}
+.user .playList .scrollset .info {
+  padding: 24rpx 30rpx;
+  font-size: 24rpx;
+  color: #969696;
+}
+.user .playList .scrollset .info .title {
+  font-weight: bold;
+  padding-bottom: 14rpx;
+  font-size: 28rpx;
+  color: black;
+}
+
+.user .playList .scrollset .info .areage {
+  padding-bottom: 10rpx;
+}
+
+.user .playList .scrollset .toast {
+  color: #969696;
+  margin: 100rpx auto 0;
+  font-size: 28rpx;
+  text-align: center;
+}

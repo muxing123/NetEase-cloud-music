@@ -36,6 +36,12 @@ Component({
         wx.hideLoading()
         console.log(err)
       })
+    },
+    // 去歌曲播放页面
+    goPlay(e) {
+      wx.navigateTo({
+        url: `/pages/play/play?id=${e.currentTarget.dataset.id}`
+      })
     }
   },
   /**

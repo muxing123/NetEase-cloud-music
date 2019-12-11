@@ -9,12 +9,13 @@
     <input class="input" bindfocus="setPopGender" value="{{gender}}" />
   </view>
   <van-popup show="{{ showGender }}" custom-style="width: 80%;" bind:close="onClose">
+    <view class="select {{num === 0? 'color' : ''}}" bindtap="setGender" data-num="{{0}}">保密</view>
     <view class="select {{num === 1? 'color' : ''}}" bindtap="setGender" data-num="{{1}}">男</view>
     <view class="select {{num === 2? 'color' : ''}}" bindtap="setGender" data-num="{{2}}">女</view>
   </van-popup>
   <view class="option">
     <view class="describe">生日</view>
-    <input class="input" bindfocus="setPop" value="{{birthday}}" />
+    <input class="input" bindfocus="setPop" value="{{birthday}}" bindinput="setbirthday"/>
   </view>
   <van-popup show="{{ show }}" position="bottom" custom-style="height: 50%;" bind:close="onClose">
     <van-datetime-picker type="date" value="{{ currentDate  }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" formatter="{{ formatter }}" bindcancel="onClose" bindconfirm="setBirthday" />

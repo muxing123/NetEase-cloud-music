@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    user: {},
     num: 1,
     show: false,
     showCity: false,
@@ -37,6 +38,7 @@ Page({
     this.setData({
       nickname: e.detail.value
     })
+    this.data.user.profile.nickname = e.detail.value
   },
   // 修改性别
   setGender(e) {
@@ -46,12 +48,22 @@ Page({
       genderUpload: e.currentTarget.dataset.num,
       showGender: false
     })
+    this.data.user.profile.gender = e.currentTarget.dataset.num
   },
   // 修改签名
   setSignature(e) {
-    signature: e.detail.value
+    this.setData({
+      signature: e.detail.value
+    })
+    this.data.user.profile.signature = e.detail.value
   },
   // 修改生日
+  setbirthday(value) {
+    this.setData({
+      birthday: value.detail.timeStamp
+    });
+    this.data.user.profile.birthday = value.detail.timeStamp
+  },
   setBirthday(value) {
     let n = value.detail;
     let date = new Date(n);
@@ -64,6 +76,7 @@ Page({
       birthdayUpload: value.detail,
       show: false
     });
+    this.data.user.profile.birthday = value.detail
   },
   // 修改城市
   setTwon(obj) {
@@ -78,6 +91,8 @@ Page({
       province: obj.detail.values[0].code,
       city: obj.detail.values[1].code
     })
+    this.data.user.profile.city = obj.detail.values[1].code
+    this.data.user.profile.province = obj.detail.values[0].code
   },
   // 控制性别弹出层打开
   setPopGender() {
@@ -110,6 +125,7 @@ Page({
     wx.showToast({
       title: '修改成功',
     })
+    wx.setStorageSync("user", this.data.user)
     app.globalData.fly.get(`/user/update?gender=${this.data.genderUpload}&signature=${this.data.signature}&city=${this.data.city}&nickname=${this.data.nickname}&birthday=${this.data.birthdayUpload}&province=${this.data.province}`).then(res => {
       console.log(res, "修改用户信息")
     }).catch(err => {
@@ -142,6 +158,7 @@ Page({
       })
     }
     this.setData({
+      user,
       nickname: user.profile.nickname,
       gender: num === 0 ? '保密' : (num === 1 ? '男' : '女'),
       genderUpload: num,

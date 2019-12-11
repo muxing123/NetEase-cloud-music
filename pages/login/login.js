@@ -61,6 +61,12 @@ Page({
       console.log(err)
     })
   },
+  // 去注册页面
+  goRegister() {
+    wx.navigateTo({
+      url: '/pages/register/register',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

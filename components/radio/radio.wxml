@@ -5,7 +5,7 @@
     <view class="right">电台广场</view>
   </view>
   <view class="result">
-    <view wx:for="{{result}}" wx:key="{{key}}" class="item">
+    <view wx:for="{{result}}" wx:key="{{key}}" class="item" bindtap="goRadio" data-id="{{item.program.radio.id}}">
       <view class="box">
         <image src="{{item.picUrl}}" class="img"></image>
       </view>

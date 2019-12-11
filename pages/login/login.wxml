@@ -22,7 +22,7 @@
           </view>
           <view class="bottom">
             <view class="left" bindtap="getPhone">立即登录</view>
-            <view class="right">立即注册</view>
+            <view class="right" bindtap="goRegister">立即注册</view>
           </view>
         </view>
       </van-tab>

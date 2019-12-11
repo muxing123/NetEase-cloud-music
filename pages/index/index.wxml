@@ -103,7 +103,9 @@
   <view class="searchResult" wx:if="{{show === 3}}">
     <van-tabs active="{{ active }}" bind:click="setCat">
       <!-- <van-tab wx:for="{{searchType}}" wx:key="{{index}}" title="{{item.type}}" name="{{item.cat}}"> -->
-      <van-tab title="综合" name="{{1018}}">综合</van-tab>
+      <van-tab title="综合" name="{{1018}}">
+        <comprehensive value="{{value}}" history="{{history}}" bindsetTab="setTab"></comprehensive>
+      </van-tab>
       <van-tab title="单曲" name="{{1}}">
         <view class="playList">
           <scroll-view scroll-y="true" class="scrollset">
@@ -141,22 +143,22 @@
         </view>
       </van-tab>
       <van-tab title="视频" name="{{1014}}">
-        <videos value="{{value}}"></videos>  
+        <videos value="{{value}}" history="{{history}}"></videos>  
       </van-tab>
       <van-tab title="歌手" name="{{100}}">        
-        <singerunti value="{{value}}"></singerunti>        
+        <singerunti value="{{value}}" history="{{history}}"></singerunti>        
       </van-tab>
       <van-tab title="专辑" name="{{10}}">
-        <albumlist value="{{value}}"></albumlist>
+        <albumlist value="{{value}}" history="{{history}}"></albumlist>
       </van-tab>
       <van-tab title="歌单" name="{{1000}}">
-        <sheetlist value="{{value}}"></sheetlist>
+        <sheetlist value="{{value}}" history="{{history}}"></sheetlist>
       </van-tab>
       <van-tab title="电台" name="{{1009}}">
-        <radiolist value="{{value}}"></radiolist>
+        <radiolist value="{{value}}" history="{{history}}"></radiolist>
       </van-tab>
       <van-tab title="用户" name="{{1002}}">
-        <user value="{{value}}"></user>
+        <user value="{{value}}" history="{{history}}"></user>
       </van-tab>
     </van-tabs>
   </view>

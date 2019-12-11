@@ -118,6 +118,13 @@ Page({
       show: 2
     })
   },
+  // 改变当前标签页
+  setTab(e) {
+    this.setData({
+      active: e.detail
+    })
+    console.log(this.data.active)
+  },
   // 搜索
   onSearch(e) {
     if (typeof(e.detail) !== "object") {

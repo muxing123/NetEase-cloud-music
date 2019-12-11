@@ -5,7 +5,7 @@
     <view class="right">更多节目</view>
   </view>
   <view class="result">
-    <view wx:for="{{result}}" wx:key="{{key}}" class="item">
+    <view wx:for="{{result}}" wx:key="{{key}}" class="item" bindtap="goRadio" data-id="{{item.radio.id}}">
       <view class="box">
         <image src="{{item.coverUrl}}" class="img"></image>
       </view>

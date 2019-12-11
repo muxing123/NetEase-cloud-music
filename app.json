@@ -11,7 +11,8 @@
     "pages/playvideo/playvideo",
     "pages/album/album",
     "pages/radio/radio",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/register/register"
   ],
   "window": {
     "backgroundTextStyle": "light",

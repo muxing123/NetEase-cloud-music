@@ -123,6 +123,19 @@
 					"pathName": "pages/radio/radio",
 					"query": "id=791635420",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/user",
+					"pathName": "pages/user/user",
+					"query": "id=110189734",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/register/register",
+					"pathName": "pages/register/register",
+					"scene": null
 				}
 			]
 		}

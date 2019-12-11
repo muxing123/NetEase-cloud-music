@@ -99,7 +99,8 @@ Page({
   // 字符索引
   setNum(e) {
     this.setData({
-      num: e.currentTarget.dataset.index
+      num: e.currentTarget.dataset.index,
+      offset: 0
     })
     if (e.currentTarget.dataset.item === '热') {
       this.setData({
@@ -159,6 +160,18 @@ Page({
       })
     }
   },
+  // 上拉加载
+  upload() {
+    // let num = this.data.offset + 30
+    // this.setData({
+    //   offset: num
+    // })
+    this.data.offset += 30
+    this.setData({
+      offset: this.data.offset
+    })
+    this.getSingerCat()
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -214,11 +227,6 @@ Page({
     //   offset: num,
     //   pages
     // })
-    let num = this.data.offset + 30
-    this.setData({
-      offset: num
-    })
-    this.getSingerCat()
   },
 
   /**

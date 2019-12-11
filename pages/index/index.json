@@ -17,6 +17,7 @@
     "albumlist": "../../components/albumlist/albumlist",
     "sheetlist": "../../components/sheetlist/sheetlist",
     "radiolist": "../../components/radiolist/radiolist",
-    "user": "../../components/user/user"
+    "user": "../../components/user/user",
+    "comprehensive": "../../components/comprehensive/comprehensive"
   }
 }

@@ -19,7 +19,7 @@
   color: white;
 }
 .singerList .scrollset {
-  height: 1000rpx;
+  height: 970rpx;
 }
 .singerList .scrollset .artists {
   padding: 20rpx 0 20rpx 30rpx; 
